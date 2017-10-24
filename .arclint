@@ -1,0 +1,29 @@
+{
+  "linters": {
+    "chmod": {
+      "type": "chmod"
+    },
+    "filename": {
+      "type": "filename"
+    },
+    "json": {
+      "type": "json",
+      "include": [
+        "(^\\.arcconfig$)",
+        "(^\\.arclint$)"
+      ]
+    },
+    "merge-conflict": {
+      "type": "merge-conflict"
+    },
+    "shell": {
+      "type": "shellcheck",
+      "include": [
+        "(\\.sh$)"
+      ]
+    },
+    "spelling": {
+      "type": "spelling"
+    }
+  }
+}
