@@ -9,23 +9,23 @@ KEYS_TEMPLATE=P267
 
 if [ $# -ne 1 ]
 then
-	>&2 echo "Usage: $(basename "$0") <username>"
-	exit 64
+    >&2 echo "Usage: $(basename "$0") <username>"
+    exit 64
 fi
 ACCOUNT=$1
 
 if [ ! -f $SHELLUSERS ]
 then
-	>&2 echo "You must run this at the top of a rOPS working copy."
-	exit 66
+    >&2 echo "You must run this at the top of a rOPS working copy."
+    exit 66
 fi
 
 LASTUID=$(grep 'uid: 2' $SHELLUSERS | sort | tail -n 1 | awk '{print $2}')
 NEWUID=$((LASTUID + 1))
 {
     echo "  $ACCOUNT:"
-	echo "    fullname: $ACCOUNT"
-	echo "    uid: $NEWUID"
+    echo "    fullname: $ACCOUNT"
+    echo "    uid: $NEWUID"
 } >> $SHELLUSERS
 
 AUTHORIZED_KEYS=roles/shellserver/users/files/ssh_keys/$ACCOUNT

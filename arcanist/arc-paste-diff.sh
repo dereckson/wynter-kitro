@@ -9,8 +9,8 @@ then
 fi
 
 if [ "$COLORDIFF" = "" ]; then
-	diff -u <(arc paste "$1") <(arc paste "$2")
+    diff -u <(arc paste "$1") <(arc paste "$2")
 else
-	diff -u <(arc paste "$1") <(arc paste "$2") | colordiff
+    diff -u <(arc paste "$1") <(arc paste "$2") | colordiff
 fi
 
