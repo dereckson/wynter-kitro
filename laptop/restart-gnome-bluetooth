@@ -1,0 +1,4 @@
+#!/bin/sh
+old_pid=$(ps auxw | grep "gnome-control-center bluetooth" | grep -v grep |awk '{print $2}')
+kill -9 $old_pid
+gnome-control-center bluetooth
